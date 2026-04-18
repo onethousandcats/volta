@@ -7,7 +7,7 @@ interface EmptyStateProps extends PropsWithChildren {
 
 export function EmptyState({ children, eyebrow, title }: EmptyStateProps) {
   return (
-    <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-md border border-dashed border-gray-200 px-6 py-12 text-center">
+    <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-md border border-dashed border-border px-6 py-12 text-center">
       {eyebrow ? (
         <span className="mb-3 text-[11px] uppercase tracking-widest text-muted">{eyebrow}</span>
       ) : null}

@@ -20,7 +20,7 @@ export function ThreadView({
 }: ThreadViewProps) {
   if (!selectedThread) {
     return (
-      <section className="flex flex-1 items-center justify-center bg-app">
+      <section className="flex flex-1 items-center justify-center bg-panel">
         <EmptyState eyebrow="Reader" title="Select a thread">
           Choose a thread from the inbox to read it here.
         </EmptyState>
@@ -29,8 +29,8 @@ export function ThreadView({
   }
 
   return (
-    <section className="flex flex-1 flex-col overflow-hidden bg-app">
-      <header className="border-b border-gray-200 bg-panel px-8 py-5">
+    <section className="flex flex-1 flex-col overflow-hidden bg-panel">
+      <header className="border-b border-border px-8 py-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
             <h2 className="text-lg font-semibold text-ink">{selectedThread.subject}</h2>
@@ -43,7 +43,7 @@ export function ThreadView({
         </div>
       </header>
 
-      <div className="scrollbar-thin flex-1 space-y-3 overflow-y-auto px-8 py-6">
+      <div className="scrollbar-thin flex-1 overflow-y-auto px-8 py-6">
         {isLoading && messages.length === 0 ? <LoadingState label="Loading thread…" /> : null}
 
         {error && messages.length === 0 ? (
@@ -61,9 +61,9 @@ export function ThreadView({
         {messages.map((message) => (
           <article
             key={message.id}
-            className="rounded-md border border-gray-200 bg-panel px-6 py-5 text-sm"
+            className="border-b border-divider py-5 text-sm last:border-0"
           >
-            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-gray-100 pb-4">
+            <div className="flex flex-wrap items-start justify-between gap-3 pb-4">
               <div>
                 <p className="font-medium text-ink">{message.from || "Unknown sender"}</p>
                 {message.to ? <p className="mt-0.5 text-xs text-muted">to {message.to}</p> : null}
@@ -73,12 +73,12 @@ export function ThreadView({
               </time>
             </div>
 
-            <div className="mt-4 whitespace-pre-wrap break-words leading-7 text-ink">
+            <div className="whitespace-pre-wrap break-words leading-7 text-ink">
               {message.body || message.snippet || "No plain text body available."}
             </div>
 
             {message.hasAttachments ? (
-              <div className="mt-4 rounded border border-dashed border-gray-300 bg-gray-50 px-4 py-3 text-xs text-muted">
+              <div className="mt-4 rounded border border-dashed border-border bg-panel-alt px-4 py-3 text-xs text-muted">
                 {message.attachmentCount} attachment{message.attachmentCount !== 1 ? "s" : ""}
               </div>
             ) : null}

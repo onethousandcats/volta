@@ -37,8 +37,8 @@ const ThreadRow = memo(function ThreadRow({
         onClick={() => data.onSelectThread(thread.id)}
         className={`flex h-[80px] w-full flex-col justify-center border-b px-3 text-left transition ${
           isActive
-            ? "bg-blue-50"
-            : "border-transparent hover:bg-gray-50"
+            ? "border-divider bg-accent-bg"
+            : "border-divider hover:bg-panel-alt"
         }`}
       >
         <div className="flex items-center justify-between gap-3">
@@ -67,8 +67,8 @@ export function ThreadList({
   );
 
   return (
-    <section className="flex w-[380px] shrink-0 flex-col border-r border-gray-200 bg-panel">
-      <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+    <section className="flex w-[380px] shrink-0 flex-col border-r border-border bg-panel">
+      <div className="flex items-center justify-between border-b border-border px-5 py-4">
         <div>
           <h2 className="text-sm font-semibold text-ink">Inbox</h2>
           <p className="mt-0.5 text-xs text-muted">{threads.length} threads</p>

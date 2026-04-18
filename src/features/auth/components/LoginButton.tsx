@@ -44,7 +44,7 @@ export function LoginButton() {
       <button
         type="button"
         onClick={handleLogout}
-        className="w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-ink transition hover:bg-gray-50"
+        className="w-full rounded-md border border-border bg-panel px-3 py-1.5 text-xs font-medium text-ink transition hover:bg-panel-alt"
       >
         Disconnect
       </button>
@@ -57,7 +57,7 @@ export function LoginButton() {
         type="button"
         onClick={handleLogin}
         disabled={isAuthLoading}
-        className="w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-ink transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-md border border-border bg-panel px-3 py-1.5 text-xs font-medium text-ink transition hover:bg-panel-alt disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isAuthLoading ? "Connecting…" : "Connect Gmail"}
       </button>

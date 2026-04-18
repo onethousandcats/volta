@@ -5,16 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        app: "#f3f4f6",
-        panel: "#ffffff",
-        "panel-alt": "#f9fafb",
-        accent: "#2563eb",
-        ink: "#111827",
-        muted: "#6b7280",
-        border: "rgba(0, 0, 0, 0.09)",
+        app: "var(--color-app)",
+        panel: "var(--color-panel)",
+        "panel-alt": "var(--color-panel-alt)",
+        accent: "var(--color-accent)",
+        "accent-bg": "var(--color-accent-bg)",
+        "accent-text": "var(--color-accent-text)",
+        ink: "var(--color-ink)",
+        muted: "var(--color-muted)",
+        border: "var(--color-border)",
+        divider: "var(--color-divider)",
       },
       boxShadow: {
-        glow: "0 0 0 2px rgba(37, 99, 235, 0.18)",
+        glow: "0 0 0 2px var(--color-accent-bg)",
       },
     },
   },
